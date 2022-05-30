@@ -9,6 +9,6 @@ data class Titular(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     val emal: String,
-    override val nome: String,
-    override val cpf: Int
-): Pessoa(cpf, nome), Serializable
+    @Embedded
+    val pessoa: Pessoa
+): Serializable
