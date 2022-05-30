@@ -10,8 +10,8 @@ import javax.persistence.Table
 @Table(name = "tb_telefone")
 data class Telefone(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
-    private val apelido: String,
-    private val numero: Int,
-    private val ddd: Int
+    val id: Long,
+    val apelido: String,
+    val numero: Int,
+    val ddd: Int
 )

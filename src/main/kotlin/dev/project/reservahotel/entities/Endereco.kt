@@ -11,10 +11,10 @@ import javax.persistence.Table
 data class Endereco(
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
-    private val logradouro: String,
-    private val numero: Int,
-    private val cidade: String,
-    private val estado: String,
-    private val cep: Int
+    val id: Long,
+    val logradouro: String,
+    val numero: Int,
+    val cidade: String,
+    val estado: String,
+    val cep: Int
 )

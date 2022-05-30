@@ -7,10 +7,10 @@ import javax.persistence.*
 @Table(name = "tb_reserva_hotel")
 data class ReservaHotel(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
-    private val criacaoReserva: LocalDateTime,
+    val id: Long,
+    val criacaoReserva: LocalDateTime,
     @field:OneToOne
-    private val hotel: Hotel,
+    val hotel: Hotel,
     @field:OneToOne
-    private val diarias: Diarias
+    val diarias: Diarias
 )

@@ -1,6 +1,10 @@
 package dev.project.reservahotel.entities
 
-sealed class Pessoa(
-    private val nome: String,
-    private val cpf: Int
-)
+import java.io.Serializable
+import javax.persistence.MappedSuperclass
+
+@MappedSuperclass
+abstract class Pessoa(
+    open val cpf: Int,
+    open val nome: String
+): Serializable
