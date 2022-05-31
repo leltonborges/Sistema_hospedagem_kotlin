@@ -22,8 +22,8 @@ class TitularService(
             .orElseThrow { NotFoundException("Not found titular: $id", NotFoundException()) }
     }
 
-    fun save(telefone: Titular): Long{
-        return this.titularRepository.save(telefone).id;
+    fun save(telefone: Titular): Titular{
+        return this.titularRepository.save(telefone)
     }
 
     fun delete(id: Long): Unit {

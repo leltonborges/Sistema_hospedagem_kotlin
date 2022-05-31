@@ -8,7 +8,7 @@ import javax.persistence.*
 @Table(name = "tb_diarias")
 data class Diarias(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     val dataEntrada: LocalDateTime,
     val qtdDias: Int,
     val precoDiaria: BigDecimal

@@ -2,9 +2,7 @@ package dev.project.reservahotel.dtos
 
 import javax.validation.constraints.NotNull
 
-data class TelefoneDTO(
+data class QuartoDTO(
     @NotNull
-    val numero: Int,
-    @NotNull
-    val ddd: Int
+    val qtdCama: Int
 )

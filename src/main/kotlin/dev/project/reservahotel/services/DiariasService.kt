@@ -22,8 +22,8 @@ class DiariasService(
             .orElseThrow { NotFoundException("Not found diaria: $id", NotFoundException()) }
     }
 
-    fun save(entity: Diarias): Long{
-        return this.diariasRepository.save(entity).id;
+    fun save(entity: Diarias): Diarias{
+        return this.diariasRepository.save(entity);
     }
 
     fun delete(id: Long): Unit {

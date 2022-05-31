@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "tb_hotel")
 data class Hotel(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     @field:OneToOne
     val endereco: Endereco,
 

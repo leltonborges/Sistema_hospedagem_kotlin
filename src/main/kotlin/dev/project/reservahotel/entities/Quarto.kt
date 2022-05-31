@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "tb_quarto")
 data class Quarto(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     val numero: Int,
-    val qtdCama: Int
+    var qtdCama: Int
 )

@@ -22,8 +22,8 @@ class ReservaHotelService(
             .orElseThrow { NotFoundException("Not found reservaHotel: $id", NotFoundException()) }
     }
 
-    fun save(entity: ReservaHotel): Long{
-        return this.reservaHotelRepository.save(entity).id;
+    fun save(entity: ReservaHotel): ReservaHotel{
+        return this.reservaHotelRepository.save(entity);
     }
 
     fun delete(id: Long): Unit {
