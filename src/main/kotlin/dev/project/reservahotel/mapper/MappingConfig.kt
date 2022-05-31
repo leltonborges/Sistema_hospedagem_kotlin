@@ -1,9 +1,11 @@
 package dev.project.reservahotel.mapper
 
 import dev.akkinoc.spring.boot.orika.OrikaMapperFactoryConfigurer
+import dev.project.reservahotel.dtos.DiariasDTO
 import dev.project.reservahotel.dtos.EnderecoDTO
 import dev.project.reservahotel.dtos.QuartoDTO
 import dev.project.reservahotel.dtos.TelefoneDTO
+import dev.project.reservahotel.entities.Diarias
 import dev.project.reservahotel.entities.Endereco
 import dev.project.reservahotel.entities.Quarto
 import dev.project.reservahotel.entities.Telefone
@@ -32,6 +34,12 @@ class MappingConfig : OrikaMapperFactoryConfigurer {
 
         orikaMapperFactory.classMap(QuartoDTO::class.java, Quarto::class.java)
             .field("qtdCama", "qtdCama")
+            .byDefault()
+            .register();
+
+        orikaMapperFactory.classMap(DiariasDTO::class.java, Diarias::class.java)
+            .field("dataEntrada", "dataEntrada")
+            .field("qtdDias", "qtdDias")
             .byDefault()
             .register();
     }
