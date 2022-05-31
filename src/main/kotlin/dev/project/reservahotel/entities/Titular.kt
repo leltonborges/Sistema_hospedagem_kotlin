@@ -10,5 +10,7 @@ data class Titular(
     val id: Long?,
     val emal: String,
     @Embedded
-    val pessoa: Pessoa
+    val pessoa: Pessoa,
+    @field:OneToOne
+    val reservaHotel: ReservaHotel
 ): Serializable
