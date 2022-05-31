@@ -1,5 +1,6 @@
 package dev.project.reservahotel.entities
 
+import com.fasterxml.jackson.annotation.JsonFormat
 import java.time.LocalDateTime
 import javax.persistence.*
 
@@ -8,9 +9,10 @@ import javax.persistence.*
 data class ReservaHotel(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     val criacaoReserva: LocalDateTime,
     @field:OneToOne
-    val hotel: Hotel,
+    var hotel: Hotel,
     @field:OneToOne
-    val diarias: Diarias
+    var diarias: Diarias
 )
