@@ -1,21 +1,17 @@
 package dev.project.reservahotel.mapper
 
 import dev.akkinoc.spring.boot.orika.OrikaMapperFactoryConfigurer
-import dev.project.reservahotel.dtos.DiariasDTO
-import dev.project.reservahotel.dtos.EnderecoDTO
-import dev.project.reservahotel.dtos.QuartoDTO
-import dev.project.reservahotel.dtos.TelefoneDTO
-import dev.project.reservahotel.entities.Diarias
-import dev.project.reservahotel.entities.Endereco
-import dev.project.reservahotel.entities.Quarto
-import dev.project.reservahotel.entities.Telefone
+import dev.project.reservahotel.dtos.*
+import dev.project.reservahotel.entities.*
+import dev.project.reservahotel.services.EnderecoService
+import dev.project.reservahotel.services.HotelService
 import ma.glasnost.orika.CustomMapper
 import ma.glasnost.orika.MapperFactory
 import ma.glasnost.orika.MappingContext
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class MappingConfig : OrikaMapperFactoryConfigurer {
+class MappingConfig: OrikaMapperFactoryConfigurer {
 
     override fun configure(orikaMapperFactory: MapperFactory) {
         orikaMapperFactory.classMap(TelefoneDTO::class.java, Telefone::class.java)
@@ -28,7 +24,6 @@ class MappingConfig : OrikaMapperFactoryConfigurer {
             .field("logradouro", "logradouro")
             .field("numero", "numero")
             .field("cidade", "cidade")
-//            .customize(customField)
             .byDefault()
             .register();
 
@@ -42,16 +37,6 @@ class MappingConfig : OrikaMapperFactoryConfigurer {
             .field("qtdDias", "qtdDias")
             .byDefault()
             .register();
-    }
 
-    // Example custom
-    private val customField = object  : CustomMapper<EnderecoDTO, Endereco>(){
-        override fun mapAtoB(dto: EnderecoDTO?, entity: Endereco?, context: MappingContext?) {
-            if (entity != null && dto != null) {
-                entity.logradouro = dto.logradouro
-                entity.numero = dto.numero
-                entity.cidade = dto.cidade
-            }
-        }
     }
 }

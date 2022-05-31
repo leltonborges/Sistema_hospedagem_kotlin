@@ -7,8 +7,9 @@ import javax.persistence.*
 data class Hotel(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
+    var nome: String,
     @field:OneToOne
-    val endereco: Endereco,
+    var endereco: Endereco?,
 
     @field:JoinTable(
         name = "TB_HOTEL_QUARTO",
@@ -16,5 +17,5 @@ data class Hotel(
         inverseJoinColumns = [JoinColumn(name = "QUARTO_ID", referencedColumnName = "id")]
     )
     @field:OneToMany(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-    val quartos: List<Quarto>,
+    var quartos: List<Quarto>,
 )
