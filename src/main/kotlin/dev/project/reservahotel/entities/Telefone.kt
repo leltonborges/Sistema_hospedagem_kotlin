@@ -12,6 +12,6 @@ data class Telefone(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
     val apelido: String,
-    val numero: Int,
-    val ddd: Int
+    var numero: Int,
+    var ddd: Int
 )
