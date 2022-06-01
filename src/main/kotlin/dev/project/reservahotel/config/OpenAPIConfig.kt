@@ -16,7 +16,7 @@ class OpenAPIConfig {
             .info(Info().title("API sistema de reserva de hospedagem")
                 .description("Api de estudo feita por Lelton Borges")
                 .version("1.0.0")
-                .license(License().name("Apache License").url("https://github.com/leltonborges/Sistema_hospedagem_kotlin")))
+                .license(License().name("Apache License").url("https://github.com/leltonborges/Sistema_hospedagem_kotlin/blob/main/LICENSE")))
             .externalDocs(ExternalDocumentation()
                 .description("Lelton Borges")
                 .url("https://my-portfolio-lelton.herokuapp.com/"))
