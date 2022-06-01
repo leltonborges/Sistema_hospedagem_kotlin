@@ -61,3 +61,34 @@ VALUES
     (NOW(), 4, 2),
     (NOW(), 5, 4),
     (NOW(), 2, 1);
+
+INSERT INTO tb_titular (email, ID_RESERVA, nome, cpf)
+VALUES
+    ('lia@examplo.com', 2, 'Lia', 1234),
+    ('bob@examplo.com', 3, 'Bob', 4321),
+    ('bia@examplo.com', 4, 'Bia', 4561),
+    ('alex@examplo.com', 5, 'Alex', 9875),
+    ('maria@examplo.com', 1, 'Maria', 4123);
+
+INSERT INTO TB_PESSOA_TELEFONE (TITULAR_ID, TELEFONE_ID)
+VALUES
+    (1, 2),
+    (2, 3),
+    (2, 5),
+    (3, 3),
+    (3, 4),
+    (4, 4),
+    (4, 1),
+    (5, 1),
+    (5, 2),
+    (1, 5);
+
+INSERT INTO TB_PESSOA_ENDERECO (TITULAR_ID, ENDERECO_ID)
+VALUES
+    (1, 2),
+    (2, 1),
+    (3, 4),
+    (4, 1),
+    (5, 3),
+    (5, 2),
+    (1, 5);
