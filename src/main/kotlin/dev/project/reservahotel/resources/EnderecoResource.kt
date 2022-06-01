@@ -45,7 +45,7 @@ class EnderecoResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody enderecoDTO: EnderecoDTO
+        @RequestBody @Valid enderecoDTO: EnderecoDTO
     ): ResponseEntity<Endereco> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.enderecoService.update(id, enderecoDTO))
     }

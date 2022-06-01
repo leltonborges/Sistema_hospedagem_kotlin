@@ -39,7 +39,7 @@ class HotelResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody dto: HotelUpdateDTO
+        @RequestBody @Valid dto: HotelUpdateDTO
     ): ResponseEntity<Hotel> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.hotelService.update(id, dto))
     }

@@ -38,7 +38,7 @@ class QuartoResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody dto: QuartoDTO
+        @RequestBody @Valid dto: QuartoDTO
     ): ResponseEntity<Quarto> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.quartoService.update(id, dto))
     }

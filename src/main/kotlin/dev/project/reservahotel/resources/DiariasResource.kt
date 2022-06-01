@@ -38,7 +38,7 @@ class DiariasResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody dto: DiariasDTO
+        @RequestBody @Valid dto: DiariasDTO
     ): ResponseEntity<Diarias> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.diariasService.update(id, dto))
     }

@@ -1,7 +1,11 @@
 package dev.project.reservahotel.dtos
 
+import javax.validation.constraints.NotNull
+
 data class PessoaUpdateDTO(
+    @NotNull
     val enderecos: LongArray,
+    @NotNull
     val telefones: LongArray
 ) {
     override fun equals(other: Any?): Boolean {
