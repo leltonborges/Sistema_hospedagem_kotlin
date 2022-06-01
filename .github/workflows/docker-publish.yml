@@ -24,6 +24,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
+          context: .
+          platforms: src/main/docker/
           images: leltondev/sistema-hospedagem:v1.0.0
           tags: |
             type=ref,event=branch
