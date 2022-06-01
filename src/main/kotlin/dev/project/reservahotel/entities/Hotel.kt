@@ -1,5 +1,7 @@
 package dev.project.reservahotel.entities
 
+import org.hibernate.annotations.LazyCollection
+import org.hibernate.annotations.LazyCollectionOption
 import javax.persistence.*
 
 @Entity
@@ -16,6 +18,7 @@ data class Hotel(
         joinColumns = [JoinColumn(name = "HOTEL_ID", referencedColumnName = "ID")],
         inverseJoinColumns = [JoinColumn(name = "QUARTO_ID", referencedColumnName = "id")]
     )
-    @field:OneToMany(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+    @field:OneToMany(cascade = [CascadeType.ALL])
+    @field:LazyCollection(LazyCollectionOption.FALSE)
     var quartos: List<Quarto>,
 )

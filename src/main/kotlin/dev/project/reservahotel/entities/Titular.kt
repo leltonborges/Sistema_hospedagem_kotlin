@@ -8,9 +8,10 @@ import javax.persistence.*
 data class Titular(
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
-    val emal: String,
+    var email: String,
     @Embedded
     val pessoa: Pessoa,
+    @field:JoinColumn(name = "ID_RESERVA")
     @field:OneToOne
     val reservaHotel: ReservaHotel
 ): Serializable
