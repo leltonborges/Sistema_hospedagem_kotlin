@@ -16,7 +16,7 @@ $ ./gradlew build
 $ cd build/libs/
 $ java -jar reserva-hotel-0.0.1-SNAPSHOT.jar
 ```
-+ Se que especificar outra porta para aplicação
++ Se quer especificar outra porta para aplicação
 ```shell
 $ java -DPORT_SERVER=9000 -jar reserva-hotel-0.0.1-SNAPSHOT.jar
 ```
