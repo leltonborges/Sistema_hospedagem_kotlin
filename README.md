@@ -1,6 +1,7 @@
 # Sistema de hospedagem
 
 ## Pré requisitos
+Ferramentas que deve está instaladas e configuradas na máquina
 + Java 11+
 + Gradle 7+
 
@@ -32,4 +33,15 @@ Dados de acesso ao bonco
 + User Name: `sa`
 + Password: 
 
-Foi inserido automaticamente valores durante a inicialização da aplicação.
+Foi inserido automaticamente valores durante a inicialização da aplicação, usando migrations do flyway.
+
+
+## Observações
++ Não há camada de seguranção com o spring security
++ Não há todas as validações
++ Não há todas as capturas de exceções
++ Eu não importei muito com a formatação das messagem de erro.
+
+### Pontos a serem observados
++ Não é possivel remover dados (tuplas) que possuem chave estrangeira, para isso é necessario deleta suas referencias antes da mesma. 
++ Não é possível enviar dados em outros formatos como yaml ou xml, a aplicação está configurada apenas para json
