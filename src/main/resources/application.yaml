@@ -1,0 +1,29 @@
+server:
+  port: ${PORT_SERVER:8090}
+  servlet:
+    context-path: /v1
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+spring:
+  application:
+    name: projeto-final
+  profiles:
+    active: ${PROFILE_SERVER:dev}
+  datasource:
+    url: jdbc:h2:mem:hospedagem
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
