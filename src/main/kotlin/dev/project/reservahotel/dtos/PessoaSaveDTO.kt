@@ -1,9 +1,16 @@
 package dev.project.reservahotel.dtos
 
+import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
+
 data class PessoaSaveDTO(
+    @NotBlank
     val nome: String,
+    @NotNull
     val cpf: Int,
+    @NotNull
     val enderecos: LongArray,
+    @NotNull
     val telefones: LongArray
 ) {
     override fun equals(other: Any?): Boolean {

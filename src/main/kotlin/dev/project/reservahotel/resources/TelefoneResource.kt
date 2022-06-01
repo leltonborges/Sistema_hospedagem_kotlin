@@ -45,7 +45,7 @@ class TelefoneResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody telefoneDTO: TelefoneDTO
+        @RequestBody @Valid telefoneDTO: TelefoneDTO
     ): ResponseEntity<Telefone> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.telefoneService.update(id, telefoneDTO))
     }

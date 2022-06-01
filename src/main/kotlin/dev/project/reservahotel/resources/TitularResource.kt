@@ -39,7 +39,7 @@ class TitularResource(
     @PutMapping("/{id}")
     fun updateById(
         @PathVariable id: Long,
-        @RequestBody dto: TitularUpdateDTO
+        @RequestBody @Valid dto: TitularUpdateDTO
     ): ResponseEntity<Titular> {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.titularService.update(id, dto))
     }
