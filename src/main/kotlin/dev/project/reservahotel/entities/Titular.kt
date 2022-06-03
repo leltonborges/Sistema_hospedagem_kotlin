@@ -1,12 +1,15 @@
 package dev.project.reservahotel.entities
 
+import io.swagger.v3.oas.annotations.Hidden
 import java.io.Serializable
 import javax.persistence.*
 
 @Entity
 @Table(name = "tb_titular")
 data class Titular(
-    @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Hidden
+    @field:Id
+    @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
     var email: String,
     @Embedded
