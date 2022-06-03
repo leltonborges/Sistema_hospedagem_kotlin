@@ -56,6 +56,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+        env:
+          REGISTRY: ghcr.io
+          IMAGE_NAME: leltondev/sistema-hospedagem
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
