@@ -1,5 +1,6 @@
 package dev.project.reservahotel.entities
 
+import io.swagger.v3.oas.annotations.Hidden
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotNull
 @Entity
 @Table(name = "tb_endereco")
 data class Endereco(
+    @Hidden
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,

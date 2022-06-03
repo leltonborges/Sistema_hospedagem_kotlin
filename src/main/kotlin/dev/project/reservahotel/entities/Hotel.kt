@@ -1,5 +1,6 @@
 package dev.project.reservahotel.entities
 
+import io.swagger.v3.oas.annotations.Hidden
 import org.hibernate.annotations.LazyCollection
 import org.hibernate.annotations.LazyCollectionOption
 import javax.persistence.*
@@ -7,6 +8,7 @@ import javax.persistence.*
 @Entity
 @Table(name = "tb_hotel")
 data class Hotel(
+    @Hidden
     @field:Id @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
     var nome: String,

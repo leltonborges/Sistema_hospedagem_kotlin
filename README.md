@@ -1,5 +1,10 @@
 # Sistema de hospedagem
 
+## Repositorios
++ [Github](https://github.com/leltonborges/Sistema_hospedagem_kotlin)
++ [CI/CD](https://github.com/leltonborges/Sistema_hospedagem_kotlin/blob/main/.github/workflows/docker-publish.yml)
++ [Image Docker](https://hub.docker.com/r/leltondev/sistema-hospedagem)
+
 ## Pré requisitos
 Ferramentas que deve está instaladas e configuradas na máquina
 + Java 11+
@@ -45,3 +50,16 @@ Foi inserido automaticamente valores durante a inicialização da aplicação, u
 ### Pontos a serem observados
 + Não é possivel remover dados (tuplas) que possuem chave estrangeira, para isso é necessario deleta suas referencias antes da mesma. 
 + Não é possível enviar dados em outros formatos como yaml ou xml, a aplicação está configurada apenas para json
+
+### Endpoints
+Nos endpoints que contém propriedades do tipo data, seu formato é `dd/MM/yy HH:mm`, exemplo:
++ Endpoint Diaria
+  + `/diaria` com http metodo `POST` 
+  + O formato do campo `dataEntrada` é  `dd/MM/yy HH:mm`
+  ```json
+  {
+    "dataEntrada": "11/06/2022 11:30",
+    "qtdDias": 0,
+    "precoDiaria": 0
+  }
+  ```
