@@ -81,8 +81,7 @@ jobs:
           context: .
           file: ./src/main/docker/Dockerfile
           push: true
-          tags: "leltondev/sistema-hospedagem:v1.1.0"
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: leltondev/sistema-hospedagem:v1.1.0
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
