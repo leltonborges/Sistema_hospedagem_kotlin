@@ -46,7 +46,7 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-        with: |
+        with: 
           username: "$DOCKERHUB_USERNAME"
           password: "$DOCKERHUB_TOKEN"
 
