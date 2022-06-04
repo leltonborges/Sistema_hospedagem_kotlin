@@ -50,7 +50,7 @@ jobs:
           #DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         with: 
           username: leltondev
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKER.DOCKERHUB_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
