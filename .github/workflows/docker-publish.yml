@@ -14,8 +14,6 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ main ]
-  pull_request_target:
-    types: [assigned, opened, synchronize, reopened]
 
 jobs:
   build:
@@ -41,9 +39,8 @@ jobs:
       - name: Login to DockerHub Registry
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-        #run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          username: ${{ secrets.DOCKER_HUB_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_USERNAME }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
