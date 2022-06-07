@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  app:
+    image: leltondev/sistema-hospedagem:latest
+    container_name: sistema-hospedagem
+#    environment:
+#      - SERVER_PORT=9090
+    ports:
+      - "9090:9090"
