@@ -10,6 +10,22 @@ Ferramentas que deve está instaladas e configuradas na máquina
 + Java 11+
 + Gradle 7+
 
+## Docker
+### Docker compose
+```yaml
+version: '3.8'
+services:
+  app:
+    image: leltondev/sistema-hospedagem:latest
+    container_name: sistema-hospedagem
+    ports:
+      - "8090:8090"
+```
+Expecificando a porta
+```yaml
+environment:
+      - SERVER_PORT=9090
+```
 ## Gerando executavel
 
 ```shell
